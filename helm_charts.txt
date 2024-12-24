@@ -1,0 +1,12 @@
+# apply free5gc-upf-pool.yaml before installing helm charts
+
+# eupf
+helm pull oci://ghcr.io/edgecomllc/charts/eupf --version 0.5.0
+
+# free5gc
+helm repo add towards5gs https://raw.githubusercontent.com/Free5GC/helm-charts/main
+helm repo update
+helm fetch towards5gs/free5gc --version 1.1.7
+
+# ueransim
+helm pull towards5gs/ueransim --version 2.0.17 
